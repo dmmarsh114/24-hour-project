@@ -11,5 +11,8 @@ function App() {
 
 export default App;
 
+<<<<<<< HEAD
 //nathans branch
 // hello world //
+=======
+>>>>>>> 62f927ccd79f98baa144ca41d684fa99a2248f49
