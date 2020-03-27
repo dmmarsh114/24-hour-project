@@ -4,6 +4,10 @@ import GetRestaurants from './GetRestaurants';
 import OpenWeather from './OpenWeather/OpenWeather'
 import NASA from './NASA/NASA';
 
+let style = {
+    display: 'flex',
+    justifyContent: 'center'
+}
 
 export default class GetLocation extends React.Component {
     constructor(props) {
@@ -44,10 +48,10 @@ export default class GetLocation extends React.Component {
 
     render() {
         return (
-            <div>
+            <div style={style}>
                 <DisplayCoords lat={this.state.lat} lon={this.state.lon} city={this.state.city} state={this.state.regionName} />
-                {this.state.lat && this.state.lon ? <GetRestaurants lat={this.state.lat} lon={this.state.lon} /> : null}
                 {this.state.lat && this.state.lon ? <OpenWeather lat={this.state.lat} lon={this.state.lon} /> : null}
+                {this.state.lat && this.state.lon ? <GetRestaurants lat={this.state.lat} lon={this.state.lon} /> : null}
                 {this.state.lat !== '' && this.state.lon !== '' ? <NASA lat={this.state.lat} lon={this.state.lon} /> : null}
             </div>
         )

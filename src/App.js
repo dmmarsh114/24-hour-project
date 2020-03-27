@@ -3,11 +3,19 @@ import './App.css';
 
 import GetLocation from './components/GetLocation';
 
+let style = {
+  textAlign: 'center'
+}
+
 class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <h1>this is team 6's incredible app that was made in 24 hours!</h1>
+        <div style={style}>
+          <h1>This incredible app was made by Team "Merge 6"!</h1>
+          <h2>And in less than 24 hours, no less!</h2>
+          <h6>barely...</h6>
+        </div>
         <GetLocation />
       </div>
     );
