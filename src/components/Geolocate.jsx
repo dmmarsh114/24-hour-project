@@ -1,6 +1,8 @@
 import React from "react";
 import { geolocated } from "react-geolocated";
 
+import DisplayCoords from './DisplayCoords';
+
 class Geolocate extends React.Component {
     render() {
         return !this.props.isGeolocationAvailable ? (
@@ -8,30 +10,7 @@ class Geolocate extends React.Component {
         ) : !this.props.isGeolocationEnabled ? (
             <div>Geolocation is not enabled</div>
         ) : this.props.coords ? (
-            <table>
-                <tbody>
-                    <tr>
-                        <td>latitude</td>
-                        <td>{this.props.coords.latitude}</td>
-                    </tr>
-                    <tr>
-                        <td>longitude</td>
-                        <td>{this.props.coords.longitude}</td>
-                    </tr>
-                    <tr>
-                        <td>altitude</td>
-                        <td>{this.props.coords.altitude}</td>
-                    </tr>
-                    <tr>
-                        <td>heading</td>
-                        <td>{this.props.coords.heading}</td>
-                    </tr>
-                    <tr>
-                        <td>speed</td>
-                        <td>{this.props.coords.speed}</td>
-                    </tr>
-                </tbody>
-            </table>
+            <DisplayCoords lat={this.props.coords.latitude} long={this.props.coords.longitude} />
         ) : (
                         <div>Getting the location data&hellip; </div>
                     );
