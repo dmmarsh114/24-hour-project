@@ -2,6 +2,8 @@ import React from "react";
 import DisplayCoords from './DisplayCoords';
 import GetRestaurants from './GetRestaurants';
 
+import NASA from './NASA/NASA';
+
 export default class GetLocation extends React.Component {
     constructor(props) {
         super(props)
@@ -39,14 +41,14 @@ export default class GetLocation extends React.Component {
             })
     };
 
-    render(){
-        return(
+    render() {
+        return (
             <div>
                 How did i get on this screen?!
                 <DisplayCoords lat={this.state.lat} lon={this.state.lon} />
+                {this.state.lat !== '' && this.state.lon !== '' ? <NASA lat={this.state.lat} lon={this.state.lon} /> : null}
                 {/* <OpenWeatherDisplay lat={this.state.lat} lon={this.state.lon} /> */}
                 {this.state.lat && this.state.lon ? <GetRestaurants lat={this.state.lat} lon={this.state.lon} /> : null}
-                
             </div>
         )
     }
