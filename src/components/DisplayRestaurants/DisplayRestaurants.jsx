@@ -11,6 +11,7 @@ const useStyles = makeStyles({
         textAlign: 'center',
     }
 })
+
 export default function DisplayRestaurants(props) {
     const classes = useStyles();
 

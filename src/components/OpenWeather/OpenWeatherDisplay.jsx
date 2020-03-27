@@ -1,17 +1,30 @@
 import React from 'react';
 
-let OpenWeatherDisplay = (props) => {
-    let celsiusTemp = '';
+import { makeStyles } from '@material-ui/core/styles';
+import Card from '@material-ui/core/Card';
+import CardContent from '@material-ui/core/CardContent';
 
-    function convertToCelsius() {
-        celsiusTemp = (props.temp - 32) * 5 / 9;
+const useStyles = makeStyles({
+    root: {
+        width: '250px',
+        backgroundColor: 'lightgreen',
     }
+})
 
+const OpenWeatherDisplay = (props) => {
+    const classes = useStyles();
     return (
-        <div>
-            <button onClick={convertToCelsius}>show me the temp in celsius</button>
-            <p>{celsiusTemp}</p>
-        </div>
+        <Card className={classes.root}>
+            <CardContent>
+                <h3>Current Weather:</h3>
+                <ul>
+                    <li>Weather: {props.weather}</li>
+                    <li>Description: {props.description}</li>
+                    <li>Temp in Imperial: {props.temp} &deg;F</li>
+                    <li>Temp in Metric: {((props.temp - 32) * 5 / 9).toString()} &deg;C</li>
+                </ul>
+            </CardContent>
+        </Card>
     )
 }
 
