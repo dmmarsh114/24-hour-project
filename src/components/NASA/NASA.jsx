@@ -11,7 +11,7 @@ class NASA extends React.Component {
     }
 
     componentDidMount() {
-        fetch(`https://api.nasa.gov/planetary/earth/imagery?lon=${this.props.long}&lat=${this.props.lat}&api_key=ZDJJHnQ2ZteVFqHiik49vTYcQQCRNPpASMyeK7vB`)
+        fetch(`https://api.nasa.gov/planetary/earth/imagery?lon=${this.props.lon}&lat=${this.props.lat}&api_key=ZDJJHnQ2ZteVFqHiik49vTYcQQCRNPpASMyeK7vB`)
             .then(respsonse => respsonse.json())
             .then(json => {
                 console.log(json);
