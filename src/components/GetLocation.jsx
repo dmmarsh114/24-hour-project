@@ -44,8 +44,7 @@ export default class GetLocation extends React.Component {
     render() {
         return (
             <div>
-                How did i get on this screen?!
-                <DisplayCoords lat={this.state.lat} lon={this.state.lon} />
+                <DisplayCoords lat={this.state.lat} lon={this.state.lon} city={this.state.city} state={this.state.regionName} />
                 {this.state.lat !== '' && this.state.lon !== '' ? <NASA lat={this.state.lat} lon={this.state.lon} /> : null}
                 {this.state.lat && this.state.lon ? <GetRestaurants lat={this.state.lat} lon={this.state.lon} /> : null}
                 {/* <OpenWeatherDisplay lat={this.state.lat} lon={this.state.lon} /> */}
