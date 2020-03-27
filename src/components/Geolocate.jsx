@@ -2,6 +2,7 @@ import React from "react";
 import { geolocated } from "react-geolocated";
 
 import DisplayCoords from './DisplayCoords';
+import NASA from './NASA/NASA';
 
 class Geolocate extends React.Component {
     render() {
@@ -10,7 +11,10 @@ class Geolocate extends React.Component {
         ) : !this.props.isGeolocationEnabled ? (
             <div>Geolocation is not enabled</div>
         ) : this.props.coords ? (
-            <DisplayCoords lat={this.props.coords.latitude} long={this.props.coords.longitude} />
+            <div>
+                <DisplayCoords lat={this.props.coords.latitude} long={this.props.coords.longitude} />
+                <NASA lat={this.props.coords.latitude} long={this.props.coords.longitude} />
+            </div>
         ) : (
                         <div>Getting the location data&hellip; </div>
                     );
