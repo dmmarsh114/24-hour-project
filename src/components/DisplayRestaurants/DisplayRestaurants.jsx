@@ -21,7 +21,9 @@ export default function DisplayRestaurants(props) {
 
             <Card className={classes.root}>
                 <CardContent>
-                    {props.single}
+                    {props.single} <br />
+                    {props.singleTwo} <br />
+                    {props.singleThree}
                 </CardContent>
             </Card>
         </div >
