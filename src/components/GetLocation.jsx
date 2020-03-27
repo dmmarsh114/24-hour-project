@@ -1,6 +1,7 @@
 import React from "react";
 import DisplayCoords from './DisplayCoords';
 import GetRestaurants from './GetRestaurants';
+import OpenWeather from './OpenWeather/OpenWeather'
 
 import NASA from './NASA/NASA';
 
@@ -47,7 +48,7 @@ export default class GetLocation extends React.Component {
                 <DisplayCoords lat={this.state.lat} lon={this.state.lon} city={this.state.city} state={this.state.regionName} />
                 {this.state.lat !== '' && this.state.lon !== '' ? <NASA lat={this.state.lat} lon={this.state.lon} /> : null}
                 {this.state.lat && this.state.lon ? <GetRestaurants lat={this.state.lat} lon={this.state.lon} /> : null}
-                {/* <OpenWeatherDisplay lat={this.state.lat} lon={this.state.lon} /> */}
+                {this.state.lat && this.state.lon ? <OpenWeather lat={this.state.lat} lon={this.state.lon} /> : null}
             </div>
         )
     }
