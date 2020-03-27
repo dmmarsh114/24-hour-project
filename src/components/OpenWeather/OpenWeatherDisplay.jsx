@@ -8,6 +8,10 @@ const useStyles = makeStyles({
     root: {
         width: '250px',
         backgroundColor: 'lightgreen',
+    },
+    list: {
+        listStyleType: 'none',
+        paddingLeft: '10px'
     }
 })
 
@@ -17,7 +21,7 @@ const OpenWeatherDisplay = (props) => {
         <Card className={classes.root}>
             <CardContent>
                 <h3>Current Weather:</h3>
-                <ul>
+                <ul className={classes.list}>
                     <li>Weather: {props.weather}</li>
                     <li>Description: {props.description}</li>
                     <li>Temp in Imperial: {props.temp} &deg;F</li>

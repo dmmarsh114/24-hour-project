@@ -11,7 +11,7 @@ export default class GetRestaurants extends React.Component {
             singleTwo: '',
             singleThree: ''
         }
-        
+
 
     }
 
@@ -38,7 +38,7 @@ export default class GetRestaurants extends React.Component {
                 })
                 console.log('food near me searchData', searchData.nearby_restaurants) // the scope of this searchData is whithin this fetch so we set the state so we can use this data outside of this fetch
                 console.log('newly set state with our saved results', this.state.searchResults) // we set the state now we can use the new state of searchResults which holds the searchData from above.
-                
+
             })
             .catch(err => console.log(err))
     }
@@ -48,7 +48,6 @@ export default class GetRestaurants extends React.Component {
     render() {
         return (
             <div>
-                this is where DisplayRestaurants will go
                 {/* {this.state.searchResults ? <DisplayRestaurants single={this.state.single} /> : null} */}
                 {this.state.searchResults ? <DisplayRestaurants single={this.state.single} singleTwo={this.state.singleTwo} singleThree={this.state.singleThree} /> : null}
             </div>
