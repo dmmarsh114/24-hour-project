@@ -7,7 +7,9 @@ export default class GetRestaurants extends React.Component {
 
         this.state = {
             searchResults: '',
-            single: ''
+            single: '',
+            singleTwo: '',
+            singleThree: ''
         }
         
 
@@ -28,12 +30,15 @@ export default class GetRestaurants extends React.Component {
         })
             .then(response => response.json())
             .then(searchData => {
-                // console.log('food near me searchData', searchData.nearby_restaurants) // the scope of this searchData is whithin this fetch so we set the state so we can use this data outside of this fetch
                 this.setState({
                     searchResults: searchData,
-                    single: searchData.nearby_restaurants[0].restaurant.name
+                    single: searchData.nearby_restaurants[0].restaurant.name,
+                    singleTwo: searchData.nearby_restaurants[1].restaurant.name,
+                    singleThree: searchData.nearby_restaurants[2].restaurant.name
                 })
+                console.log('food near me searchData', searchData.nearby_restaurants) // the scope of this searchData is whithin this fetch so we set the state so we can use this data outside of this fetch
                 console.log('newly set state with our saved results', this.state.searchResults) // we set the state now we can use the new state of searchResults which holds the searchData from above.
+                
             })
             .catch(err => console.log(err))
     }
@@ -45,7 +50,7 @@ export default class GetRestaurants extends React.Component {
             <div>
                 this is where DisplayRestaurants will go
                 {/* {this.state.searchResults ? <DisplayRestaurants single={this.state.single} /> : null} */}
-                {this.state.searchResults ? <DisplayRestaurants single={this.state.single} /> : null}
+                {this.state.searchResults ? <DisplayRestaurants single={this.state.single} singleTwo={this.state.singleTwo} singleThree={this.state.singleThree} /> : null}
             </div>
         )
     }
