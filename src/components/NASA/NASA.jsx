@@ -32,7 +32,12 @@ class NASA extends React.Component {
     render() {
         return (
             <div>
-                <NASADisplay url={this.state.img} />
+                {
+                    this.state.img === '' ?
+                        null
+                        : <NASADisplay url={this.state.img}
+                        />
+                }
             </div>
         )
     }

@@ -1,5 +1,7 @@
-import React from 'react'
-import DisplayRestaurants from './DisplayRestaurants/DisplayRestaurants'
+import React from 'react';
+import DisplayRestaurants from './DisplayRestaurants';
+
+import CircularProgress from '@material-ui/core/CircularProgress';
 
 export default class GetRestaurants extends React.Component {
     constructor(props) {
@@ -11,16 +13,9 @@ export default class GetRestaurants extends React.Component {
             singleTwo: '',
             singleThree: ''
         }
-
-
-    }
-
-    componentWillMount() {
-        console.log('hi,')
     }
 
     componentDidMount() {
-        console.log('how are ya?')
 
         fetch(`https://developers.zomato.com/api/v2.1/geocode?lat=${this.props.lat}&lon=${this.props.lon}`, {
             headers: {
@@ -46,10 +41,21 @@ export default class GetRestaurants extends React.Component {
 
 
     render() {
+
+        let style = {
+            margin: '40px',
+        }
+
         return (
             <div>
-                {/* {this.state.searchResults ? <DisplayRestaurants single={this.state.single} /> : null} */}
-                {this.state.searchResults ? <DisplayRestaurants single={this.state.single} singleTwo={this.state.singleTwo} singleThree={this.state.singleThree} /> : null}
+                {
+                    this.state.searchResults ?
+                        <DisplayRestaurants
+                            single={this.state.single}
+                            singleTwo={this.state.singleTwo}
+                            singleThree={this.state.singleThree} />
+                        : <CircularProgress style={style} />
+                }
             </div>
         )
     }

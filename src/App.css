@@ -1,3 +1,15 @@
 body {
     margin: 20px;
 }
+
+.displayCoords {
+    color: black;
+}
+
+.openWeather {
+    color: black;
+}
+
+.restaurants {
+    color: black;
+}

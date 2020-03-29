@@ -24,8 +24,8 @@ const OpenWeatherDisplay = (props) => {
                 <ul className={classes.list}>
                     <li>Weather: {props.weather}</li>
                     <li>Description: {props.description}</li>
-                    <li>Temp in Imperial: {props.temp} &deg;F</li>
-                    <li>Temp in Metric: {((props.temp - 32) * 5 / 9).toString()} &deg;C</li>
+                    <li>Temp in Imperial: {Math.ceil(props.temp)} &deg;F</li>
+                    <li>Temp in Metric: {Math.ceil((props.temp - 32) * 5 / 9).toString()} &deg;C</li>
                 </ul>
             </CardContent>
         </Card>
